@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Iniciar sesión | Mercadito Llanero
+        </title>
+        <link rel="stylesheet" href="/css/estilos.css">
+        <link rel="stylesheet" href="/css/interfaz.css">
+        <script defer src="/js/comun.js">
+        </script>
+        <script defer src="/js/acceso.js">
+        </script>
+    </head>
+    <body class="pagina-acceso">
+        <a class="saltar-contenido" href="#contenido">
+            Saltar al contenido
+        </a>
+        <header class="encabezado">
+            <nav class="navegacion" aria-label="Navegación principal">
+                <a href="/" class="logo">
+                    Mercadito Llanero
+                </a>
+                <ul class="menu">
+                    <li>
+                        <a href="/#productos">
+                            Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#nosotros">
+                            Nosotros
+                        </a>
+                    </li>
+                </ul>
+                <div class="acciones-usuario">
+                    <a href="/login.html" class="btn-ingresar">
+                        Iniciar sesión
+                    </a>
+                    <a href="/registro.html" class="btn-registro">
+                        Registrarse
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <noscript>
+            <p class="sin-js">
+                Activa JavaScript para utilizar los formularios y consultar el catálogo.
+            </p>
+        </noscript>
+        <main id="contenido" class="acceso">
+            <div class="presentacion-acceso">
+                <p class="etiqueta">
+                    Nuestra tierra, nuestro mercado
+                </p>
+                <h1>
+                    El campo llanero más cerca de ti
+                </h1>
+                <p>
+                    Encuentra productos de nuestra región o administra tus publicaciones desde tu cuenta.
+                </p>
+                <a class="enlace" href="/#productos">
+                    Explorar el catálogo
+                </a>
+            </div>
+            <div class="tarjeta-acceso">
+                <h2>
+                    Inicia sesión
+                </h2>
+                <p>
+                    Accede con tu correo y contraseña.
+                </p>
+                <form id="formLogin">
+                    <div class="grupo-campo">
+                        <label for="correo">
+                            Correo electrónico
+                        </label>
+                        <input id="correo" name="correo" type="email" maxlength="150" autocomplete="username" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="contrasena">
+                            Contraseña
+                        </label>
+                        <div class="campo-contrasena">
+                            <input id="contrasena" name="contrasena" type="password" autocomplete="current-password"  required>
+                            <button type="button" class="btn-ver-contrasena" data-ver-clave="contrasena" aria-label="Mostrar contraseña" aria-pressed="false">
+                                Ver
+                            </button>
+                        </div>
+                    </div>
+                    <div class="opciones-login">
+                        <a class="enlace" href="/recuperar.html">
+                            ¿Olvidaste tu contraseña?
+                        </a>
+                    </div>
+                    <p id="mensajeLogin" class="mensaje-registro" role="status" aria-live="polite" tabindex="-1">
+                    </p>
+                    <button type="submit" id="btnLogin" class="boton-registrar">
+                        Iniciar sesión
+                    </button>
+                </form>
+                <p class="texto-iniciar-sesion">
+                    ¿Aún no tienes cuenta?
+                    <a href="/registro.html">
+                        Crea tu cuenta
+                    </a>
+                </p>
+            </div>
+        </main>
+        <footer class="pie-registro">
+            <p>
+                Mercadito Llanero · Yopal, Casanare · Proyecto académico
+            </p>
+        </footer>
+    </body>
+</html>

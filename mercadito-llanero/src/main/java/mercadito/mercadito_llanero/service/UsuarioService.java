@@ -38,24 +38,8 @@ public class UsuarioService {
         }
 
         // Validar el correo
-        if (datos.getCorreo() == null ||
-                datos.getCorreo().isBlank()) {
-
-            throw new IllegalArgumentException(
-                    "El correo es obligatorio");
-        }
-
-        String correo = datos.getCorreo()
-                .trim()
-                .toLowerCase(Locale.ROOT);
-
-        // Validar formato del correo
-        if (!correo.matches(
-                "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")) {
-
-            throw new IllegalArgumentException(
-                    "El correo no tiene un formato válido");
-        }
+        ValidacionDatos.validarLongitud(datos.getNombre().trim(), 100, "El nombre");
+        String correo = ValidacionDatos.normalizarCorreo(datos.getCorreo());
 
         // Evitar correos duplicados
         if (usuarioRepository.existsByCorreoIgnoreCase(correo)) {
@@ -65,12 +49,7 @@ public class UsuarioService {
         }
 
         // Validar contraseña
-        if (datos.getContrasena() == null ||
-                datos.getContrasena().length() < 8) {
-
-            throw new IllegalArgumentException(
-                    "La contraseña debe tener mínimo 8 caracteres");
-        }
+        ValidacionDatos.validarContrasena(datos.getContrasena());
 
         // Validar rol
         if (datos.getRol() == null) {

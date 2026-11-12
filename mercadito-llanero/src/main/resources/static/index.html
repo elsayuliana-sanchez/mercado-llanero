@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Mercadito Llanero | Productos de Casanare
+        </title>
+        <link rel="stylesheet" href="/css/estilos.css">
+        <link rel="stylesheet" href="/css/interfaz.css">
+    </head>
+    <body>
+        <a class="saltar-contenido" href="#contenido">
+            Saltar al contenido
+        </a>
+        <noscript>
+            <p class="sin-js">
+                Activa JavaScript para consultar el catálogo.
+            </p>
+        </noscript>
+        <!-- ENCABEZADO Y MENU -->
+        <header class="encabezado">
+            <nav class="navegacion">
+                <a href="/" class="logo">
+                    Mercadito Llanero
+                </a>
+                <ul class="menu">
+                    <li>
+                        <a href="#inicio">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#categorias">
+                            Categorías
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#productos">
+                            Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#nosotros">
+                            Nosotros
+                        </a>
+                    </li>
+                </ul>
+                <div class="acciones-usuario">
+                    <a href="/login.html" class="btn-ingresar">
+                        Iniciar sesión
+                    </a>
+                    <a href="/registro.html" class="btn-registro">
+                        Registrarse
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <!-- SECCION PRINCIPAL -->
+        <main id="contenido">
+            <section id="inicio" class="bienvenida">
+                <div class="contenido-bienvenida">
+                    <p class="etiqueta">
+                        Productos locales de Yopal y Casanare
+                    </p>
+                    <h1>
+                        Del campo llanero
+                        <span>
+                            a tu hogar
+                        </span>
+                    </h1>
+                    <p class="descripcion">
+                        Conectamos a los pequeños productores de
+                    nuestra región con personas que buscan
+                    productos frescos, artesanales y de calidad.
+                    </p>
+                    <div class="botones-bienvenida">
+                        <a href="#productos" class="btn-principal">
+                            Explorar productos
+                        </a>
+                        <a href="/registro.html" class="btn-secundario">
+                            Soy productor
+                        </a>
+                    </div>
+                </div>
+                <div class="imagen-bienvenida">
+                    <img
+                    src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=85"
+                    alt="Frutas y verduras frescas en un mercado"
+                >
+                </div>
+            </section>
+            <!-- CATEGORIAS -->
+            <section id="categorias" class="seccion-categorias">
+                <div class="titulo-seccion">
+                    <h2>
+                        Explora nuestras categorías
+                    </h2>
+                    <p>
+                        Descubre los productos que ofrecen
+                    los productores de nuestra región.
+                    </p>
+                </div>
+                <div id="categoriasCatalogo" class="filtro-categorias" aria-label="Filtrar por categoría">
+                </div>
+            </section>
+            <!-- CATALOGO DE PRODUCTOS -->
+            <section id="productos" class="seccion-productos">
+                <div class="titulo-seccion">
+                    <h2>
+                        Productos de nuestra tierra
+                    </h2>
+                    <p>
+                        Conoce algunos productos disponibles
+                    en Mercadito Llanero.
+                    </p>
+                </div>
+                <!-- BUSCADOR -->
+                <form id="formBuscar" class="filtros">
+                    <div class="grupo-campo">
+                        <label for="buscarProducto">
+                            Nombre del producto
+                        </label>
+                        <input type="search" id="buscarProducto" placeholder="¿Qué estás buscando?" maxlength="100">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="filtroCategoria">
+                            Categoría
+                        </label>
+                        <select id="filtroCategoria">
+                            <option value="">
+                                Todas las categorías
+                            </option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-principal">
+                        Buscar
+                    </button>
+                    <button type="button" id="limpiarFiltros" class="boton-secundario">
+                        Limpiar
+                    </button>
+                </form>
+                <!-- LOS PRODUCTOS SE CARGARAN DESDE POSTGRESQL -->
+                <div id="listaProductos" class="contenedor-productos">
+                    <p class="mensaje-carga">
+                        Cargando productos...
+                    </p>
+                </div>
+                <p id="mensajeProductos" class="contador-productos" role="status" aria-live="polite">
+                </p>
+            </section>
+            <!-- INFORMACION DEL PROYECTO -->
+            <section id="nosotros" class="seccion-nosotros">
+                <div class="contenido-nosotros">
+                    <p class="etiqueta">
+                        Nuestra región, nuestro mercado
+                    </p>
+                    <h2>
+                        Apoyamos el comercio local
+                    </h2>
+                    <p>
+                        Mercadito Llanero nace como una propuesta
+                    para dar mayor visibilidad a los pequeños
+                    productores de Yopal y Casanare.
+                    </p>
+                    <p>
+                        Buscamos conectar a quienes trabajan
+                    en el campo y elaboran productos locales
+                    con compradores interesados en apoyar
+                    la economía regional.
+                    </p>
+                </div>
+            </section>
+            <!-- INVITACION A PRODUCTORES -->
+            <section class="seccion-unete">
+                <h2>
+                    ¿Eres productor de Casanare?
+                </h2>
+                <p>
+                    Publica tus productos y conecta con
+                nuevos compradores de nuestra región.
+                </p>
+                <a href="/registro.html" class="btn-principal">
+                    Crear mi cuenta
+                </a>
+            </section>
+        </main>
+        <!-- PIE DE PAGINA -->
+        <footer class="pie-pagina">
+            <div class="contenido-footer">
+                <div>
+                    <h3>
+                        Mercadito Llanero
+                    </h3>
+                    <p>
+                        Conectando productores y compradores
+                    de Yopal y Casanare.
+                    </p>
+                </div>
+                <div>
+                    <h4>
+                        Enlaces
+                    </h4>
+                    <a href="#inicio">
+                        Inicio
+                    </a>
+                    <a href="#categorias">
+                        Categorías
+                    </a>
+                    <a href="#productos">
+                        Productos
+                    </a>
+                </div>
+                <div>
+                    <h4>
+                        Ubicación
+                    </h4>
+                    <p>
+                        Yopal, Casanare, Colombia
+                    </p>
+                </div>
+            </div>
+            <div class="derechos">
+                <p>
+                    © 2026 Mercadito Llanero.
+                Proyecto académico.
+                </p>
+            </div>
+        </footer>
+        <!-- ARCHIVO JAVASCRIPT -->
+        <dialog id="detalleProducto" aria-labelledby="detalleNombre">
+            <button type="button" class="cerrar-dialogo" id="cerrarDetalle">
+                Cerrar
+            </button>
+            <div id="contenidoDetalle" class="detalle-producto">
+            </div>
+        </dialog>
+        <script src="/js/comun.js">
+        </script>
+        <script src="/js/app.js">
+        </script>
+    </body>
+</html>

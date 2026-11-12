@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Mi cuenta | Mercadito Llanero
+        </title>
+        <link rel="stylesheet" href="/css/estilos.css">
+        <link rel="stylesheet" href="/css/interfaz.css">
+        <script defer src="/js/comun.js">
+        </script>
+        <script defer src="/js/panel.js">
+        </script>
+    </head>
+    <body class="pagina-acceso" data-privada="true">
+        <a class="saltar-contenido" href="#contenido">
+            Saltar al contenido
+        </a>
+        <header class="encabezado">
+            <nav class="navegacion" aria-label="Navegación principal">
+                <a href="/" class="logo">
+                    Mercadito Llanero
+                </a>
+                <ul class="menu">
+                    <li>
+                        <a href="/#productos">
+                            Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#nosotros">
+                            Nosotros
+                        </a>
+                    </li>
+                </ul>
+                <div class="acciones-usuario">
+                    <a href="/login.html" class="btn-ingresar">
+                        Iniciar sesión
+                    </a>
+                    <a href="/registro.html" class="btn-registro">
+                        Registrarse
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <noscript>
+            <p class="sin-js">
+                Activa JavaScript para utilizar los formularios y consultar el catálogo.
+            </p>
+        </noscript>
+        <main id="contenido" class="panel">
+            <p id="cargandoPanel" role="status">
+                Consultando tu sesión…
+            </p>
+            <div id="contenidoPanel" hidden>
+                <p class="etiqueta">
+                    Mi cuenta
+                </p>
+                <h1 id="saludoUsuario">
+                </h1>
+                <dl class="perfil">
+                    <div>
+                        <dt>
+                            Nombre
+                        </dt>
+                        <dd id="perfilNombre">
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>
+                            Correo electrónico
+                        </dt>
+                        <dd id="perfilCorreo">
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>
+                            Tipo de cuenta
+                        </dt>
+                        <dd id="perfilRol">
+                        </dd>
+                    </div>
+                </dl>
+                <a class="enlace enlace-perfil" href="/#productos">
+                    Explorar productos
+                </a>
+                <section id="panelComprador" hidden>
+                    <h2>
+                        Descubre nuestra oferta local
+                    </h2>
+                    <p>
+                        Consulta productos, precios y disponibilidad en el catálogo.
+                    </p>
+                    <a class="btn-principal enlace-perfil" href="/#productos">
+                        Ver catálogo
+                    </a>
+                </section>
+                <section id="panelProductor" hidden>
+                    <div class="cabecera-seccion">
+                        <h2>
+                            Mis productos
+                        </h2>
+                        <div class="acciones-form">
+                            <button id="nuevaCategoria" type="button" class="boton-secundario">
+                                Crear categoría
+                            </button>
+                            <button id="nuevoProducto" type="button" class="btn-principal">
+                                Publicar producto
+                            </button>
+                        </div>
+                    </div>
+                    <p id="mensajePanel" class="mensaje-registro" role="status" aria-live="polite" tabindex="-1">
+                    </p>
+                    <button id="recargarProductos" type="button" class="boton-texto">
+                        Actualizar listado
+                    </button>
+                    <div id="misProductos" class="contenedor-productos" aria-busy="true">
+                    </div>
+                </section>
+            </div>
+        </main>
+        <dialog id="dialogoProducto" aria-labelledby="tituloProducto">
+            <button type="button" class="cerrar-dialogo" data-cerrar="dialogoProducto" aria-label="Cerrar formulario">
+                Cerrar
+            </button>
+            <h2 id="tituloProducto">
+                Publicar producto
+            </h2>
+            <form id="formProducto">
+                <div class="form-grid">
+                    <div class="grupo-campo">
+                        <label for="productoNombre">
+                            Nombre del producto
+                        </label>
+                        <input id="productoNombre" name="productoNombre" type="text" maxlength="100" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="productoCategoria">
+                            Categoría
+                        </label>
+                        <select id="productoCategoria" name="productoCategoria" required>
+                            <option value="">
+                                Selecciona una categoría
+                            </option>
+                        </select>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="productoPrecio">
+                            Precio en pesos colombianos
+                        </label>
+                        <input id="productoPrecio" name="productoPrecio" type="number" min="0.01" max="9999999999.99" step="0.01" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="productoCantidad">
+                            Cantidad disponible
+                        </label>
+                        <input id="productoCantidad" name="productoCantidad" type="number" min="0" max="2147483647" step="1" required>
+                    </div>
+                    <div class="grupo-campo ancho-completo">
+                        <label for="productoDescripcion">
+                            Descripción
+                        </label>
+                        <textarea id="productoDescripcion" name="productoDescripcion" maxlength="300" rows="3">
+                        </textarea>
+                    </div>
+                    <label class="check-campo ancho-completo">
+                        <input type="checkbox" id="productoDisponible" name="productoDisponible" checked>
+                        Disponible en el catálogo
+                    </label>
+                </div>
+                <p id="mensajeProducto" class="mensaje-registro" role="status" aria-live="polite" tabindex="-1">
+                </p>
+                <div class="acciones-form">
+                    <button type="submit" class="btn-principal">
+                        Guardar producto
+                    </button>
+                    <button type="button" class="boton-secundario" data-cerrar="dialogoProducto">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </dialog>
+        <dialog id="dialogoCategoria" aria-labelledby="tituloCategoria">
+            <h2 id="tituloCategoria">
+                Crear categoría
+            </h2>
+            <form id="formCategoria">
+                <div class="grupo-campo">
+                    <label for="categoriaNombre">
+                        Nombre de la categoría
+                    </label>
+                    <input id="categoriaNombre" name="categoriaNombre" type="text" maxlength="80" required>
+                </div>
+                <div class="grupo-campo">
+                    <label for="categoriaDescripcion">
+                        Descripción
+                    </label>
+                    <textarea id="categoriaDescripcion" maxlength="200" rows="3">
+                    </textarea>
+                </div>
+                <p id="mensajeCategoria" class="mensaje-registro" role="status" aria-live="polite" tabindex="-1">
+                </p>
+                <div class="acciones-form">
+                    <button type="submit" class="btn-principal">
+                        Crear categoría
+                    </button>
+                    <button type="button" class="boton-secundario" data-cerrar="dialogoCategoria">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </dialog>
+        <dialog id="dialogoEliminar" aria-labelledby="tituloEliminar">
+            <h2 id="tituloEliminar">
+                Eliminar publicación
+            </h2>
+            <p id="descripcionEliminar">
+            </p>
+            <form id="formEliminar">
+                <p id="mensajeEliminar" class="mensaje-registro" role="status" aria-live="polite" tabindex="-1">
+                </p>
+                <div class="acciones-form">
+                    <button type="submit" class="boton-secundario boton-peligro">
+                        Eliminar producto
+                    </button>
+                    <button type="button" class="boton-secundario" data-cerrar="dialogoEliminar">
+                        Conservar producto
+                    </button>
+                </div>
+            </form>
+        </dialog>
+        <footer class="pie-registro">
+            <p>
+                Mercadito Llanero · Yopal, Casanare · Proyecto académico
+            </p>
+        </footer>
+    </body>
+</html>

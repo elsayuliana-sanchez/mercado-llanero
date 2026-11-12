@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            Recuperar contraseña | Mercadito Llanero
+        </title>
+        <link rel="stylesheet" href="/css/estilos.css">
+        <link rel="stylesheet" href="/css/interfaz.css">
+        <script defer src="/js/comun.js">
+        </script>
+        <script defer src="/js/recuperar.js">
+        </script>
+    </head>
+    <body class="pagina-acceso">
+        <a class="saltar-contenido" href="#contenido">
+            Saltar al contenido
+        </a>
+        <header class="encabezado">
+            <nav class="navegacion" aria-label="Navegación principal">
+                <a href="/" class="logo">
+                    Mercadito Llanero
+                </a>
+                <ul class="menu">
+                    <li>
+                        <a href="/#productos">
+                            Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/#nosotros">
+                            Nosotros
+                        </a>
+                    </li>
+                </ul>
+                <div class="acciones-usuario">
+                    <a href="/login.html" class="btn-ingresar">
+                        Iniciar sesión
+                    </a>
+                    <a href="/registro.html" class="btn-registro">
+                        Registrarse
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <noscript>
+            <p class="sin-js">
+                Activa JavaScript para utilizar los formularios y consultar el catálogo.
+            </p>
+        </noscript>
+        <main id="contenido" class="acceso">
+            <div class="presentacion-acceso">
+                <p class="etiqueta">
+                    Nuestra tierra, nuestro mercado
+                </p>
+                <h1>
+                    Vuelve a tu cuenta
+                </h1>
+                <p>
+                    Solicita un código y elige una nueva contraseña para continuar usando Mercadito Llanero.
+                </p>
+                <a class="enlace" href="/#productos">
+                    Explorar el catálogo
+                </a>
+            </div>
+            <div class="tarjeta-acceso">
+                <h2>
+                    Recupera tu acceso
+                </h2>
+                <p>
+                    Ingresa el correo asociado a tu cuenta.
+                </p>
+                <p class="nota-simulacion">
+                    Esta es una recuperación de demostración. El código aparece en la consola donde se ejecuta la aplicación. Tiene una vigencia de 10 minutos.
+                </p>
+                <form id="formSolicitar">
+                    <div class="grupo-campo">
+                        <label for="correoSolicitud">
+                            Correo electrónico
+                        </label>
+                        <input id="correoSolicitud" name="correo" type="email" maxlength="150" autocomplete="email" required>
+                    </div>
+                    <button type="submit" class="boton-registrar">
+                        Solicitar código
+                    </button>
+                </form>
+                <button type="button" id="yaTengoCodigo" class="boton-texto">
+                    Ya tengo un código
+                </button>
+                <p id="mensajeRecuperacion" class="mensaje-registro" role="status" aria-live="polite" tabindex="-1">
+                </p>
+                <form id="formRestablecer" class="separador-form" hidden>
+                    <h3>
+                        Establece una nueva contraseña
+                    </h3>
+                    <div class="grupo-campo">
+                        <label for="correoRestablecer">
+                            Correo de la cuenta
+                        </label>
+                        <input id="correoRestablecer" name="correo" type="email" maxlength="150" autocomplete="email" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="codigo">
+                            Código de recuperación
+                        </label>
+                        <input id="codigo" name="codigo" type="text" maxlength="100" autocomplete="one-time-code" autocapitalize="none" spellcheck="false" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="nuevaContrasena">
+                            Nueva contraseña
+                        </label>
+                        <div class="campo-contrasena">
+                            <input id="nuevaContrasena" name="nuevaContrasena" type="password" autocomplete="new-password" minlength="8" required>
+                            <button type="button" class="btn-ver-contrasena" data-ver-clave="nuevaContrasena" aria-label="Mostrar contraseña" aria-pressed="false">
+                                Ver
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="confirmar">
+                            Confirmar nueva contraseña
+                        </label>
+                        <div class="campo-contrasena">
+                            <input id="confirmar" name="confirmar" type="password" autocomplete="new-password" minlength="8" required>
+                            <button type="button" class="btn-ver-contrasena" data-ver-clave="confirmar" aria-label="Mostrar contraseña" aria-pressed="false">
+                                Ver
+                            </button>
+                        </div>
+                    </div>
+                    <button type="submit" class="boton-registrar">
+                        Guardar nueva contraseña
+                    </button>
+                </form>
+                <a id="irLogin" class="btn-principal enlace-perfil" href="/login.html" hidden>
+                    Iniciar sesión
+                </a>
+            </div>
+        </main>
+        <footer class="pie-registro">
+            <p>
+                Mercadito Llanero · Yopal, Casanare · Proyecto académico
+            </p>
+        </footer>
+    </body>
+</html>

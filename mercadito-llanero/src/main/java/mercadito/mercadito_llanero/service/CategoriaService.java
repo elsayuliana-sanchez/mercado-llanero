@@ -27,7 +27,7 @@ public class CategoriaService {
     public Categoria guardarCategoria(Categoria categoria) {
 
         // Verificar que el nombre no esté vacío
-        if (categoria.getNombre() == null ||
+        if (categoria == null || categoria.getNombre() == null ||
             categoria.getNombre().isBlank()) {
 
             throw new IllegalArgumentException(
@@ -37,6 +37,8 @@ public class CategoriaService {
 
         // Eliminar espacios innecesarios
         String nombre = categoria.getNombre().trim();
+        ValidacionDatos.validarLongitud(nombre, 80, "El nombre de la categoría");
+        ValidacionDatos.validarLongitud(categoria.getDescripcion(), 200, "La descripción de la categoría");
 
         // Verificar si la categoría ya existe
         if (categoriaRepository.existsByNombreIgnoreCase(nombre)) {
@@ -47,6 +49,7 @@ public class CategoriaService {
         }
 
         // Asignar el nombre corregido
+        categoria.setId(null);
         categoria.setNombre(nombre);
 
         // Guardar la categoría en PostgreSQL

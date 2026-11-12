@@ -1,0 +1,1047 @@
+
+/* =========================================
+   MERCADITO LLANERO - ESTILOS GENERALES
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --verde: #2E7D32;
+    --verde-oscuro: #1B4332;
+    --verde-claro: #E8F5E9;
+    --crema: #F8F6EF;
+    --blanco: #FFFFFF;
+    --tierra: #B7794B;
+    --texto: #26352B;
+    --gris: #657169;
+    --borde: #E4E9E2;
+
+    --sombra: 0 8px 30px rgba(27, 67, 50, 0.08);
+    --radio: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--texto);
+    background: var(--blanco);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+section {
+    padding: 85px 7%;
+}
+
+
+/* =========================================
+   ENCABEZADO Y NAVEGACION
+========================================= */
+
+.encabezado {
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid var(--borde);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+}
+
+.navegacion {
+    max-width: 1400px;
+    margin: auto;
+    min-height: 84px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--verde-oscuro);
+    white-space: nowrap;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
+
+.menu a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--texto);
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--verde);
+}
+
+.acciones-usuario {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-ingresar,
+.btn-registro {
+    padding: 11px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-ingresar {
+    color: var(--verde-oscuro);
+}
+
+.btn-ingresar:hover {
+    background: var(--verde-claro);
+}
+
+.btn-registro {
+    background: var(--verde);
+    color: var(--blanco);
+}
+
+.btn-registro:hover {
+    background: var(--verde-oscuro);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   SECCION DE BIENVENIDA
+========================================= */
+
+.bienvenida {
+    max-width: 1600px;
+    margin: auto;
+    min-height: 580px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+
+    background: linear-gradient(
+        120deg,
+        var(--crema) 0%,
+        #EFF6EA 100%
+    );
+}
+
+.contenido-bienvenida {
+    max-width: 620px;
+}
+
+.etiqueta {
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.bienvenida h1 {
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 800;
+    color: var(--verde-oscuro);
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.bienvenida h1 span {
+    color: var(--verde);
+    display: block;
+}
+
+.descripcion {
+    color: var(--gris);
+    font-size: 17px;
+    line-height: 1.9;
+    max-width: 540px;
+    margin-bottom: 32px;
+}
+
+.botones-bienvenida {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-principal,
+.btn-secundario {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px 27px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-principal {
+    background: var(--verde);
+    color: white;
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.2);
+}
+
+.btn-principal:hover {
+    background: var(--verde-oscuro);
+    transform: translateY(-3px);
+}
+
+.btn-secundario {
+    background: white;
+    border: 1px solid var(--borde);
+    color: var(--verde-oscuro);
+}
+
+.btn-secundario:hover {
+    border-color: var(--verde);
+    background: var(--verde-claro);
+}
+
+.imagen-bienvenida {
+    position: relative;
+}
+
+.imagen-bienvenida img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 28px;
+    box-shadow: var(--sombra);
+}
+
+
+/* =========================================
+   TITULOS DE SECCIONES
+========================================= */
+
+.titulo-seccion {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.titulo-seccion h2 {
+    font-size: clamp(29px, 3vw, 42px);
+    color: var(--verde-oscuro);
+    margin-bottom: 15px;
+}
+
+.titulo-seccion p {
+    color: var(--gris);
+    font-size: 16px;
+}
+
+
+/* =========================================
+   CATEGORIAS
+========================================= */
+
+.seccion-categorias {
+    background: var(--blanco);
+}
+
+.contenedor-categorias {
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tarjeta-categoria {
+    background: var(--crema);
+    border: 1px solid var(--borde);
+    padding: 37px 30px;
+    border-radius: var(--radio);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.tarjeta-categoria:hover {
+    transform: translateY(-7px);
+    border-color: #C2DAC3;
+    box-shadow: var(--sombra);
+}
+
+.icono-categoria {
+    width: 80px;
+    height: 80px;
+    border-radius: 22px;
+    background: var(--verde-claro);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 38px;
+    margin: 0 auto 22px;
+}
+
+.tarjeta-categoria h3 {
+    font-size: 21px;
+    color: var(--verde-oscuro);
+    margin-bottom: 13px;
+}
+
+.tarjeta-categoria p {
+    color: var(--gris);
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.tarjeta-categoria a {
+    color: var(--verde);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.tarjeta-categoria a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   PRODUCTOS
+========================================= */
+
+.seccion-productos {
+    background: #FAFBF8;
+}
+
+.buscador-productos {
+    max-width: 630px;
+    margin: 0 auto 45px;
+    display: flex;
+    gap: 12px;
+}
+
+.buscador-productos input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid var(--borde);
+    background: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    outline: none;
+    color: var(--texto);
+}
+
+.buscador-productos input:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.buscador-productos button {
+    border: none;
+    border-radius: 12px;
+    padding: 14px 30px;
+    color: white;
+    background: var(--verde);
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.buscador-productos button:hover {
+    background: var(--verde-oscuro);
+}
+
+.contenedor-productos {
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 27px;
+}
+
+/* Tarjetas preparadas para los productos
+   que cargaremos con JavaScript */
+
+.tarjeta-producto {
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra);
+}
+
+.imagen-producto {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background: var(--verde-claro);
+}
+
+.info-producto {
+    padding: 23px;
+}
+
+.categoria-producto {
+    display: inline-block;
+    color: var(--verde);
+    background: var(--verde-claro);
+    border-radius: 50px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+
+.info-producto h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.descripcion-producto {
+    font-size: 14px;
+    color: var(--gris);
+    margin-bottom: 16px;
+}
+
+.precio-producto {
+    color: var(--verde-oscuro);
+    font-weight: 800;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.btn-producto {
+    display: block;
+    text-align: center;
+    background: var(--verde);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-producto:hover {
+    background: var(--verde-oscuro);
+}
+
+.mensaje-carga,
+#mensajeProductos {
+    color: var(--gris);
+    text-align: center;
+    font-size: 15px;
+}
+
+.mensaje-carga {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================
+   NOSOTROS
+========================================= */
+
+.seccion-nosotros {
+    background: var(--verde-claro);
+    text-align: center;
+}
+
+.contenido-nosotros {
+    max-width: 800px;
+    margin: auto;
+}
+
+.contenido-nosotros h2 {
+    color: var(--verde-oscuro);
+    font-size: clamp(30px, 3vw, 43px);
+    margin-bottom: 25px;
+}
+
+.contenido-nosotros p:not(.etiqueta) {
+    color: #4B6351;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   INVITACION A PRODUCTORES
+========================================= */
+
+.seccion-unete {
+    background: var(--verde-oscuro);
+    text-align: center;
+}
+
+.seccion-unete h2 {
+    font-size: clamp(29px, 3vw, 42px);
+    color: white;
+    margin-bottom: 15px;
+}
+
+.seccion-unete p {
+    color: #D7E9DB;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.seccion-unete .btn-principal {
+    background: white;
+    color: var(--verde-oscuro);
+}
+
+.seccion-unete .btn-principal:hover {
+    background: var(--crema);
+}
+
+
+/* =========================================
+   PIE DE PAGINA
+========================================= */
+
+.pie-pagina {
+    background: #14291D;
+    color: #E0ECE2;
+    padding: 60px 7% 20px;
+}
+
+.contenido-footer {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 45px;
+}
+
+.contenido-footer h3 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.contenido-footer h4 {
+    color: white;
+    margin-bottom: 17px;
+}
+
+.contenido-footer p {
+    color: #AEC5B4;
+    font-size: 14px;
+    max-width: 380px;
+}
+
+.contenido-footer a {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #AEC5B4;
+}
+
+.contenido-footer a:hover {
+    color: white;
+}
+
+.derechos {
+    max-width: 1250px;
+    margin: auto;
+    padding-top: 20px;
+    border-top: 1px solid #355041;
+    text-align: center;
+    font-size: 13px;
+    color: #AEC5B4;
+}
+
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--tierra);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   DISEÑO PARA TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .navegacion {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 18px 20px;
+        gap: 18px;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+    .bienvenida {
+        gap: 35px;
+    }
+
+    .contenedor-productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================
+   DISEÑO PARA CELULARES
+========================================= */
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 65px 5%;
+    }
+
+    .navegacion {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .menu {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+    .acciones-usuario {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .bienvenida {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 65px;
+    }
+
+    .contenido-bienvenida {
+        margin: auto;
+    }
+
+    .bienvenida h1 {
+        letter-spacing: -1px;
+    }
+
+    .descripcion {
+        font-size: 15px;
+    }
+
+    .botones-bienvenida {
+        justify-content: center;
+    }
+
+    .imagen-bienvenida img {
+        height: 300px;
+    }
+
+    .contenedor-categorias {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-productos {
+        grid-template-columns: 1fr;
+    }
+
+    .buscador-productos {
+        flex-direction: column;
+    }
+
+    .buscador-productos button {
+        width: 100%;
+    }
+
+    .contenido-footer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
+/* =========================================
+PANTALLAS MUY PEQUEÑAS
+========================================= */
+
+@media (max-width: 400px) {
+
+    .bienvenida h1 {
+        font-size: 37px;
+    }
+
+    .btn-principal,
+    .btn-secundario {
+        width: 100%;
+    }
+
+    .acciones-usuario {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* RESPETAR PREFERENCIAS DE MOVIMIENTO */
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================
+   PRODUCTOS CARGADOS DESDE POSTGRESQL
+========================================= */
+
+.imagen-producto-icono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        135deg,
+        #E8F5E9,
+        #F8F6EF
+    );
+    font-size: 85px;
+}
+
+.cantidad-producto {
+    color: #657169;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.estado-disponible {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 20px;
+    background: #E8F5E9;
+    color: #2E7D32;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.estado-agotado {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 20px;
+    background: #FCE8E6;
+    color: #B3261E;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#mensajeProductos {
+    margin-top: 25px;
+}
+
+/* =========================================
+   MERCADITO LLANERO - REGISTRO
+========================================= */
+
+.pagina-registro {
+    background: var(--crema);
+}
+
+.contenedor-registro {
+    min-height: calc(100vh - 150px);
+    max-width: 1250px;
+    margin: auto;
+    padding: 65px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+/* INFORMACION DEL LADO IZQUIERDO */
+
+.presentacion-registro h1 {
+    font-size: clamp(35px, 4vw, 56px);
+    color: var(--verde-oscuro);
+    margin-bottom: 25px;
+}
+
+.presentacion-registro h1 span {
+    color: var(--verde);
+    display: block;
+}
+
+.presentacion-registro > p:not(.etiqueta) {
+    color: var(--gris);
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.beneficios-registro {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.beneficios-registro p {
+    padding: 13px 17px;
+    border-radius: 12px;
+    background: #E8F5E9;
+    color: var(--verde-oscuro);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* TARJETA DEL FORMULARIO */
+
+.tarjeta-registro {
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 24px;
+    box-shadow: var(--sombra);
+    padding: 40px;
+    width: 100%;
+}
+
+.tarjeta-registro h2 {
+    color: var(--verde-oscuro);
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.subtitulo-registro {
+    color: var(--gris);
+    margin-bottom: 28px;
+    font-size: 14px;
+}
+
+/* CAMPOS */
+
+.grupo-campo {
+    margin-bottom: 20px;
+}
+
+.grupo-campo label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--texto);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.grupo-campo input,
+.grupo-campo select {
+    width: 100%;
+    padding: 14px 16px;
+
+    background: #FAFBF8;
+    border: 1px solid #D9E2D8;
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--texto);
+
+    outline: none;
+    transition: 0.3s;
+}
+
+.grupo-campo input:focus,
+.grupo-campo select:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.grupo-campo input::placeholder {
+    color: #929D95;
+}
+
+/* BOTON DE REGISTRO */
+
+.boton-registrar {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+
+    color: white;
+    background: var(--verde);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.boton-registrar:hover:not(:disabled) {
+    background: var(--verde-oscuro);
+    transform: translateY(-2px);
+}
+
+.boton-registrar:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+/* MENSAJES */
+
+.mensaje-registro {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.mensaje-registro:empty {
+    display: none;
+}
+
+.mensaje-exito {
+    padding: 12px;
+    border-radius: 10px;
+    background: #E8F5E9;
+    color: #1B6332;
+}
+
+.mensaje-error {
+    padding: 12px;
+    border-radius: 10px;
+    background: #FDECEA;
+    color: #B3261E;
+}
+
+/* ENLACE DE LOGIN */
+
+.texto-iniciar-sesion {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--gris);
+}
+
+.texto-iniciar-sesion a {
+    color: var(--verde);
+    font-weight: 700;
+}
+
+.texto-iniciar-sesion a:hover {
+    text-decoration: underline;
+}
+
+/* PIE DE PAGINA */
+
+.pie-registro {
+    background: var(--verde-oscuro);
+    color: #E0ECE2;
+    padding: 24px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* ADAPTACION A TABLETS */
+
+@media (max-width: 950px) {
+
+    .contenedor-registro {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        max-width: 650px;
+    }
+
+    .presentacion-registro {
+        text-align: center;
+    }
+}
+
+/* ADAPTACION A CELULARES */
+
+@media (max-width: 600px) {
+
+    .contenedor-registro {
+        padding: 35px 16px;
+    }
+
+    .tarjeta-registro {
+        padding: 26px 20px;
+    }
+
+    .tarjeta-registro h2 {
+        font-size: 26px;
+    }
+
+    .presentacion-registro h1 {
+        font-size: 35px;
+    }
+}

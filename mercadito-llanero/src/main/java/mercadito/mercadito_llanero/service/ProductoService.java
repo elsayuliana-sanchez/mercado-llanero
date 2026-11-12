@@ -133,12 +133,20 @@ public class ProductoService {
                     "El nombre del producto es obligatorio");
         }
 
+        ValidacionDatos.validarLongitud(producto.getNombre().trim(), 100, "El nombre del producto");
+        ValidacionDatos.validarLongitud(producto.getDescripcion(), 300, "La descripción del producto");
+
         if (producto.getPrecio() == null ||
                 producto.getPrecio()
                     .compareTo(BigDecimal.ZERO) <= 0) {
 
             throw new IllegalArgumentException(
                     "El precio debe ser mayor que cero");
+        }
+
+        BigDecimal precio = producto.getPrecio().stripTrailingZeros();
+        if (precio.scale() > 2 || precio.compareTo(new BigDecimal("9999999999.99")) > 0) {
+            throw new IllegalArgumentException("El precio admite hasta 10 enteros y 2 decimales");
         }
 
         if (producto.getCantidad() == null ||

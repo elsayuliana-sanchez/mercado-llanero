@@ -33,7 +33,7 @@ public class RecuperacionController {
 
             return ResponseEntity.ok(Map.of(
                 "mensaje",
-                "Si el correo esta registrado, se enviara un codigo de recuperacion"
+                "Simulación local: si la cuenta está activa, el código de demostración se muestra en la consola del servidor. No se envía correo real."
             ));
 
         } catch (IllegalArgumentException e) {

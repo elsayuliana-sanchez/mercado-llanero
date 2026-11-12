@@ -6,7 +6,6 @@ import java.security.SecureRandom;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Locale;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Value;
@@ -55,12 +54,7 @@ public class RecuperacionService {
     // VALIDAR Y NORMALIZAR CORREO
     private String normalizarCorreo(String correo) {
 
-        if (correo == null || correo.isBlank()) {
-            throw new IllegalArgumentException(
-                    "Debe ingresar el correo");
-        }
-
-        return correo.trim().toLowerCase(Locale.ROOT);
+        return ValidacionDatos.normalizarCorreo(correo);
     }
 
     // SOLICITAR RECUPERACION
@@ -72,6 +66,9 @@ public class RecuperacionService {
                     "Recuperacion simulada deshabilitada");
         }
 
+        if (datos == null) {
+            throw new IllegalArgumentException("Debe proporcionar los datos de recuperación");
+        }
         String correo = normalizarCorreo(datos.getCorreo());
 
         // Eliminar codigos vencidos
@@ -122,6 +119,9 @@ public class RecuperacionService {
                     "Recuperacion simulada deshabilitada");
         }
 
+        if (datos == null) {
+            throw new IllegalArgumentException("Debe proporcionar los datos de recuperación");
+        }
         String correo = normalizarCorreo(datos.getCorreo());
 
         if (datos.getCodigo() == null ||
@@ -131,12 +131,7 @@ public class RecuperacionService {
                     "Debe ingresar el codigo de recuperacion");
         }
 
-        if (datos.getNuevaContrasena() == null ||
-                datos.getNuevaContrasena().length() < 8) {
-
-            throw new IllegalArgumentException(
-                    "La nueva contrasena debe tener minimo 8 caracteres");
-        }
+        ValidacionDatos.validarContrasena(datos.getNuevaContrasena());
 
         RecuperacionContrasena recuperacion =
                 codigos.get(correo);
